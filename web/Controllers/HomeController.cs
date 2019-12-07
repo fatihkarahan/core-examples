@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using RabbitmQ;
 using web.Models;
 
 namespace web.Controllers
@@ -20,6 +21,8 @@ namespace web.Controllers
 
         public IActionResult Index()
         {
+            Publisher publisher = new Publisher("karahan", "test mesajı");
+            Consumer consumer = new Consumer("karahan");
             return View();
         }
 
