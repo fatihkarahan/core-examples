@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RabbitmQ;
+using Service.Queue;
 using web.Models;
 
 namespace web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IQueueService _queueService;
+        public HomeController(IQueueService queueService)
         {
-            _logger = logger;
+            _queueService = queueService;
         }
 
         public IActionResult Index()
         {
-            Publisher publisher = new Publisher("karahan", "test mesajı");
-            Consumer consumer = new Consumer("karahan");
+            Publisher publisher = new Publisher("rabbitmq", "rabiitmq data");
+            Consumer consumer = new Consumer(_queueService, "rabbitmq");
             return View();
         }
 
