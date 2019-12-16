@@ -7,17 +7,17 @@ using ES;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RabbitmQ;
+using Service.Queue;
 using web.Models;
 
 namespace web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IQueueService _queueService;
+        public HomeController(IQueueService queueService)
         {
-            _logger = logger;
+            _queueService = queueService;
         }
 
         public IActionResult Index()
