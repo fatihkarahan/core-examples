@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using ES;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RabbitmQ;
@@ -21,8 +22,6 @@ namespace web.Controllers
 
         public IActionResult Index()
         {
-            Publisher publisher = new Publisher("karahan", "test mesajı");
-            Consumer consumer = new Consumer("karahan");
             return View();
         }
 
@@ -36,5 +35,6 @@ namespace web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+     
     }
 }

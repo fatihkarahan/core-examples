@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ES\ES.csproj" />
     <ProjectReference Include="..\RabbitmQ\RabbitmQ.csproj" />
   </ItemGroup>
 
