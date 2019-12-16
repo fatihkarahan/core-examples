@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />
+    <ProjectReference Include="..\ES\ES.csproj" />
     <ProjectReference Include="..\RabbitmQ\RabbitmQ.csproj" />
     <ProjectReference Include="..\Service\Service.csproj" />
   </ItemGroup>
